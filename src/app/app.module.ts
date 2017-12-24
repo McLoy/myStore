@@ -3,16 +3,34 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SearchComponent } from './search/search.component';
+import { ProductService } from './shared/product.service';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    ProductItemComponent,
+    ProductDetailComponent,
+    SearchComponent
   ],
   imports: [
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent},
+      {path: 'products/:productId', component: ProductDetailComponent}
+    ]),
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

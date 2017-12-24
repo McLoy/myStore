@@ -1,0 +1,42 @@
+1. installing Bootstrap for styles and popper.js
+run in terminal windows inside project(from IDE)
+
+npm i bootstrap@next jquery popper.js -P
+
+2. adding Bootstrap styles to the styles section in angular-cli.json
+
+"../node_modules/bootstrap/dist/css/bootstrap.css"
+
+3. add the required scripts for Bootstrap to the scripts section in angular-cli.json
+
+"scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js"
+      ]
+4. adding components, service and routes
+
+-spec false -> create all without tests part
+
+ng g c home -spec false
+ng g c footer -spec false
+ng g c navbar -spec false
+ng g c product-item -spec false
+ng g c product-detail -spec false
+ng g c search -spec false
+
+service
+ng g s shared/product -spec false -m app.module
+
+router
+put in app.module.ts
+
+import {RouterModule} from '@angular/router';
+
+imports:[
+  RouterModule.forRoot([
+    {path: '', component: HomeComponent},
+    {path: 'products/:productId', component: ProductDetailComponent}
+  ]),
+  ...
+]
