@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { SearchComponent } from './search/search.component';
 import { ProductService } from './shared/product.service';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {RouterModule} from '@angular/router';
       {path: '', component: HomeComponent},
       {path: 'products/:productId', component: ProductDetailComponent}
     ]),
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
