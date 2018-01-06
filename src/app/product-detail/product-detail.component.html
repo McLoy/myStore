@@ -1,3 +1,14 @@
-<p>
-  product-detail works!
-</p>
+<figure class="figure">
+  <img src="http://placehold.it/820x320" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">
+    <h4>Title: {{product.title}}</h4>
+    <h5>Price: {{product.price | currency}}</h5>
+    <h5> Description: {{product.description}}</h5>
+    <h5> Rating: {{product.rating}}</h5>
+    <h5>Categories:
+      <li *ngFor="let category of product.categories">
+        {{category}}
+      </li>
+    </h5>
+  </figcaption>
+</figure>
