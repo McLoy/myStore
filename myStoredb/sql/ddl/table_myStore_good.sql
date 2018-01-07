@@ -1,0 +1,25 @@
+DROP TABLE MYSTORE_GOOD;
+--------------------------------------------------
+--  Table MYSTORE_GOOD
+--------------------------------------------------
+Create table MYSTORE_GOOD (
+    GOOD_ID                    NUMBER(12)          		NOT NULL,
+    GOOD_NAME              	   VARCHAR2(20 CHAR)      NOT NULL,
+    GOOD_TODO_ID               NUMBER(12)          		,
+    GOOD_ADDRESSESLINE1        VARCHAR2(255 CHAR)     NOT NULL,
+    GOOD_STATUS                VARCHAR2(1)         		NOT NULL,
+    GOOD_USR_INS               VARCHAR2(255 CHAR)     DEFAULT USER NOT NULL,
+    GOOD_DAT_INS               DATE                		DEFAULT SYSDATE NOT NULL,
+    GOOD_USR_UPD               VARCHAR2(255 CHAR)     ,
+    GOOD_DAT_UPD               DATE,
+
+CONSTRAINT MYSTORE_GOOD_PK PRIMARY KEY (GOOD_ID)	,
+CONSTRAINT FK_MYSTORE_GOOD_MYSTORE_TODO FOREIGN KEY (GOOD_TODO_ID) REFERENCES MYSTORE_TODO (TODO_ID)
+
+);
+
+DROP SEQUENCE MYSTORE_GOOD_SEQ;
+CREATE SEQUENCE MYSTORE_GOOD_SEQ;
+
+grant DELETE,INSERT,SELECT,UPDATE on MYSTORE_GOOD to MYSTORE_WRITE;
+grant SELECT on MYSTORE_GOOD to MYSTORE_READ;

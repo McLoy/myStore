@@ -1,0 +1,5 @@
+${MYSTORE_HOST};${MYSTORE_PORT};${MYSTORE_SID};${MYSTORE_USER};${HOME};sql/ddl/myStore_create_roles.sql;N;Y
+${MYSTORE_HOST};${MYSTORE_PORT};${MYSTORE_SID};${MYSTORE_USER};${HOME};sql/ddl/table_myStore_good.sql;N;Y
+${MYSTORE_HOST};${MYSTORE_PORT};${MYSTORE_SID};${MYSTORE_USER};${HOME};sql/ddl/table_myStore_group.sql;N;Y
+${MYSTORE_HOST};${MYSTORE_PORT};${MYSTORE_SID};${MYSTORE_USER};${HOME};sql/upd/myStore_upd_01.sql;N;Y
+${MYSTORE_HOST};${MYSTORE_PORT};${MYSTORE_SID};${MYSTORE_USER};${HOME};sql/upd/myStore_upd_02.sql;N;Y
